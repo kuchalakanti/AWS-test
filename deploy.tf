@@ -34,7 +34,7 @@ resource "aws_route_table_association" "prod-crta-public-subnet-1"{
 }
 resource "aws_key_pair" "keypair" {
   key_name   = "key"
-  public_key = file("../key/kris.pub")
+  public_key = file("/key/kris.pub")
   #public_key = file("../key/aws-ubuntu.pem")
 }
 resource "aws_security_group" "ssh-allowed" {
