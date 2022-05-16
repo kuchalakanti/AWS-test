@@ -17,13 +17,13 @@ jobs:
         name: Install terraform
 
       - name: Terraform Init
-        run: cd github && terraform init -var aws_key=AKIA5JMO6JABJO57DBGM} -var aws_secret=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 -var git_token=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
+        run: terraform init -var aws_key=AKIA5JMO6JABJO57DBGM} -var aws_secret=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 -var git_token=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
 
       - name: Terraform Validate
-        run: cd github && terraform validate -no-color
+        run: terraform validate -no-color
 
       - name: Terraform Plan
-        run: cd github &&  terraform plan -var aws_key=AKIA5JMO6JABJO57DBGM -var aws_secret=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 -var git_token=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 -no-color
+        run: terraform plan -var aws_key=AKIA5JMO6JABJO57DBGM -var aws_secret=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 -var git_token=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 -no-color
   deploy:
     needs: build
     name: "Deploy Github"
